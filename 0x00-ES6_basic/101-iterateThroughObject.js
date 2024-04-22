@@ -1,13 +1,13 @@
 export default function iterateThroughObject(reportWithIterator) {
-  let string = "";
+  let string = '';
   let count = 1;
-  let length = reportWithIterator.length;
-  for (let val of reportWithIterator) {
-    string += val;
+  const { length } = reportWithIterator;
+  for (const value of reportWithIterator) {
+    string += value;
     if (count !== length) {
-      string += " | ";
+      string += ' | ';
       count += 1;
-    };
-  };
+    }
+  }
   return string;
 }
