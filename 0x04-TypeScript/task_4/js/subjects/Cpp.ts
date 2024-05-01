@@ -4,7 +4,7 @@ namespace Subjects {
         //lastName: string,
         experienceTeachingC?: number,
     }
-    class Cpp extends Subject {
+    export class Cpp extends Subject {
         public getRequirements(): string {
             return "Here is the list of requirements for Cpp"
         }

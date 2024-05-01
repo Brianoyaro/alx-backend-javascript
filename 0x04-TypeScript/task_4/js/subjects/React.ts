@@ -9,7 +9,7 @@ namespace Subjects {
             return "Here is the list of requirements for React"
         }
         public getAvailableTeacher(): string {
-            if (this.teacher.experienceTeachingC) {
+            if (this.teacher.experienceTeachingReact) {
                 return `Available Teacher: ${this.teacher}`;
             } else {
                 return "No available teacher"
