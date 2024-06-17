@@ -1,0 +1,48 @@
+const fs = require('node:fs')
+function countStudents(path) {
+    try {
+        const data = fs.readFileSync(path, 'utf-8');
+	    const lines = data.split('\n');
+        // to cater for first row which desrcibes each column
+        let number = -1;
+        for (let line of lines) {
+            if (line) {
+                number += 1
+            }
+        }
+        console.log(`Number of students: ${number}`)
+        // this part is pending
+        const studentsRows = data.split('\n').slice(1);
+        const students = studentsRows.map((row) => {
+            const data = row.split(',')
+            return {
+                firstname: data[0],
+                lastname: data[1],
+                age: data[2],
+                field: data[3]
+            }
+        })
+        // group the students using their field of study
+        let groups = {};
+        students.forEach((student) => {
+            // if the student's field doesnt exists initialize it
+            if(!groups[student.field]) {
+                groups[student.field] = [];
+            }
+            // push student's first name to the list
+            groups[student.field].push(student.firstname)
+        });
+        // console.log(groups)
+        for (let group in groups) {
+            const count = groups[group].length;
+            const studentGroup = groups[group].join(', ')
+            if (studentGroup) {
+                console.log(`Number of students in ${group}: ${count}. List: ${studentGroup}`);
+            }
+        }
+    } catch(err) {
+        throw new Error('Cannot load the database')
+    }
+}
+
+module.exports = countStudents
