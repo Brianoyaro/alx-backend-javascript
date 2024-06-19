@@ -7,6 +7,6 @@ describe("asserts 1-calcul.js", function() {
     expect(calculateNumber('SUM', 1, 2)).to.equal(3);
     expect(calculateNumber('SUBTRACT', -1, -2)).to.equal(1);
     expect(calculateNumber('DIVIDE', 6.03, 2)).to.equal(3);
-    /*expect('DIVIDE', -1, 0)).to.be.'Error';*/
+    expect(calculateNumber('DIVIDE', -1, 0)).to.equal('Error');
   });
 });
