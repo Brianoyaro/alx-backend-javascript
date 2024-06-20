@@ -10,5 +10,9 @@ describe("Async test with done", function() {
       done(err);
     });
   });
+  it("should do nothing when success is false", function() {
+    const result = getPaymentTokenFromAPI(false);
+    expect(result).to.be.undefined;
+  });
 });
 
