@@ -1,5 +1,4 @@
-const { expect } = require('chai');
-//const expect = require("chai").expect;
+const expect = require("chai").expect;
 const calculateNumber = require("./6-payment_token.js");
 
 describe("Async test with done", function() {
