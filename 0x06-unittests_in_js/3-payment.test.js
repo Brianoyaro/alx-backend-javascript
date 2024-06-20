@@ -6,15 +6,12 @@ const sendPaymentRequestToApi = require('./3-payment.js');
 const utils = require('./utils.js');
 
 
-describe('sendPAymentRequestToApi', function() {
-  it('spies on the sendPaymentRequestToApi property from Utils module', function() {
-    /*let mySpy = sinon.spy(sendRequestToApi);
-    sendRequestToApi(100, 20);
-    expect(mySpy.calledWith(100, 20)).to.be.true;
-    expect(mySpy.calledOnce).to.be.true;*/
-    let mySpy = sinon.spy(utils, calculateNumber);
-    sendRequestToApi(100, 20);
-    expect(mySpy.calledWith(100, 20)).to.be.true;
+describe('sendPaymentRequestToApi', function() {
+  it('spies on the calculateNumber property', function() {
+    let mySpy = sinon.spy(utils, 'calculateNumber');
+    sendPaymentRequestToApi(100, 20);
+    expect(mySpy.calledWith('SUM', 100, 20)).to.be.true;
     expect(mySpy.calledOnce).to.be.true;
+    mySpy.restore();
   });
 });
