@@ -26,4 +26,10 @@ describe('cart page suite', function() {
       expect(response.statusCode).to.equal(404);
       done();
   });});
+  it('checks correct result', function(done) {
+    request.get('http://localhost:7865/cart/123', function(error, response, body) {
+      expect(body).to.equal('Payment methods for cart 123');
+      done();
+    });
+  });
 });
