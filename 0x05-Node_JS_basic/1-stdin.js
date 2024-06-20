@@ -5,7 +5,7 @@ process.stdin.on('readable', function() {
     if (name !== null) {
         // process.stdout.write(`Your name is ${name}`);
 	name = name.trim();
-        console.log(`Your name is ${name}`);
+        console.log(`Your name is: ${name}`);
     }
 })
 process.stdin.on('end', function() {
