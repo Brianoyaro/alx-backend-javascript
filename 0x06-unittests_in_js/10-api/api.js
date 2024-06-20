@@ -12,7 +12,8 @@ app.get('/cart/:id', (req, res, next) => {
   next();
 })
 app.get('/available_payments', (req, res, next) => {
-  let obj = { payment_methods: { credit_cards: true, paypal: false}};
+  // let obj = { payment_methods: { credit_cards: true, paypal: false}};
+  let obj = {"payment_methods":{"credit_cards":true,"paypal":false}};
   res.send(obj)
   next();
 })
