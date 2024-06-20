@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const getPaymentFromAPI = require("./6-payment_token.js");
+const getPaymentTokenFromAPI = require("./6-payment_token.js");
 
 describe("Async test with done", function() {
   it("asserts data received from api", function(done) {
