@@ -34,17 +34,17 @@ describe('cart page suite', function() {
   });
 });
 // fix this
-describe.skip('available endpoint suite', function() {
+describe('available endpoint suite', function() {
 it('checks correct available_payments result', function(done) {
     request.get('http://localhost:7865/available_payments', function(error, response, body) {
-      expect(body).to.deep.equal({"payment_methods":{"credit_cards":true,"paypal":false}});
+      expect(JSON.parse(body)).to.deep.equal({payment_methods:{credit_cards:true,paypal:false}});
       done();
     });
   });
 });
 describe('login suite', function() {
 it('checks correct login result', function(done) {
-    request.post({url: 'http://localhost:7865/login', form: { "userName": "Betty" }}, function(error, response, body) {
+    request.post({url: 'http://localhost:7865/login', json: { "username": "Betty" }}, function(error, response, body) {
       expect(body).to.equal('Welcome Betty');
       done();
     });
