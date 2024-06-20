@@ -1,5 +1,4 @@
-const chai = require("chai");
-const expect = chai.expect;
+const expect = require("chai").expect;
 // import sinon
 const sinon = require("sinon");
 const sendPaymentRequestToApi = require('./4-payment.js');
